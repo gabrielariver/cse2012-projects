@@ -59,7 +59,7 @@ public class Journal
                 var parts = line.Split('|');
                 if (parts.Length == 4)
                 {
-                    _entries.Add(new Entry(parts[0], parts[1], parts[2], parts[3])); // Corregido a _entries
+                    _entries.Add(new Entry(parts[0], parts[1], parts[2], parts[3])); 
                 }
             }
         }
