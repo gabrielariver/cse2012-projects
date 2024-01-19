@@ -1,5 +1,5 @@
 using System;
-
+//entry class
 public class Entry
 {
     public string Date { get; }

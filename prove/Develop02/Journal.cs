@@ -1,10 +1,10 @@
 using System;
 using System.Collections.Generic;
 using System.IO;
-
+//Journal class
 public class Journal
 {
-    private List<Entry> _entries = new List<Entry>(); 
+    private List<Entry> _entries = new List<Entry>();
 
     public void WriteEntry(string prompt)
     {
@@ -20,7 +20,7 @@ public class Journal
 
     public void DisplayAll()
     {
-        foreach (var entry in _entries) 
+        foreach (var entry in _entries)
         {
             entry.Display();
         }
@@ -32,7 +32,7 @@ public class Journal
         string filename = Console.ReadLine();
         using (StreamWriter sw = new StreamWriter(filename))
         {
-            foreach (var entry in _entries) 
+            foreach (var entry in _entries)
             {
                 sw.WriteLine($"{entry.Date}|{entry.Prompt}|{entry.Response}|{entry.Mood}");
             }
