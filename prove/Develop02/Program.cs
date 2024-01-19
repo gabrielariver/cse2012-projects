@@ -3,7 +3,7 @@ using System;
 //outside of the menu options, this question allows
 //the user to add their mood and display it in the 
 //saved file, and save has been placed before load
-// so that the user is not confused when using the journal
+//so that the user is not confused when using the journal
 class Program
 {
     static void Main(string[] args)

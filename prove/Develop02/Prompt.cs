@@ -1,6 +1,6 @@
 using System;
 using System.Collections.Generic;
-//Promt Generator class
+//Promt Generator Class
 public class PromptGenerator
 {
     private List<string> _prompts = new List<string>
