@@ -1,55 +1,60 @@
 using System;
-//As part of the creativity, the program can be repeated for new writings as desired by the user and also leaves a single word as a clue.
-//Additionally, if the user misspells their references, it allows them to enter the text but not continue with 
-//the process of hiding the words. Reference, Scripture, and Words classes work together to handle and display
-//biblical information in a structured and organized way.
+//As part of the creativity, it displays texts from religious scriptures and allows the user to play with them by hiding random words,
+//but allowing one to remain present so that the user remembers the text as the last clue. 
+//It also offers the possibility of adding new writes to continue the process.
 class Program
 {
     static void Main(string[] args)
     {
-        while (true)
+        string referenceInput = "John 3:16";
+        string scriptureText = "For God so loved the world that He gave His one and only Son, that whoever believes in Him shall not perish but have eternal life.";
+
+        Reference reference = Reference.Parse(referenceInput);
+        Scripture scripture = new Scripture(reference, scriptureText);
+
+        do
         {
-            Console.WriteLine("Enter the reference of the scripture (e.g., 'John 3:16'):");
-            string referenceInput = Console.ReadLine();
-            Console.WriteLine("Enter the text of the scripture:");
-            string scriptureText = Console.ReadLine();
+            scripture.Display();
+            Console.WriteLine("\nType 'QUIT' to exit, or press Enter to continue:");
+            string input = Console.ReadLine();
 
-            Reference reference;
-            try
+            if (input.Equals("QUIT", StringComparison.OrdinalIgnoreCase))
             {
-                reference = Reference.Parse(referenceInput);
-            }
-            catch (ArgumentException ex)
-            {
-                Console.WriteLine(ex.Message);
-                continue;
+                break;
             }
 
-            Scripture scripture = new Scripture(reference, scriptureText);
+            scripture.HideRandomWords();
+        }
+        while (!scripture.AreAllWordsHidden());
+
+        Console.WriteLine("All words are hidden.");
+        
+        Console.WriteLine("Would you like to add a new scripture? (yes/no)");
+        string userResponse = Console.ReadLine();
+
+        if (userResponse.Equals("yes", StringComparison.OrdinalIgnoreCase))
+        {
+            Console.WriteLine("Please enter the new scripture reference:");
+            string newReferenceInput = Console.ReadLine();
+            Console.WriteLine("Please enter the new scripture text:");
+            string newUserScripture = Console.ReadLine();
+
+            reference = Reference.Parse(newReferenceInput);
+            scripture = new Scripture(reference, newUserScripture);
 
             do
             {
                 scripture.Display();
-                Console.WriteLine("\nType 'QUIT' to exit, or press Enter to continue:");
-                string input = Console.ReadLine();
-
-                if (input.Equals("QUIT", StringComparison.OrdinalIgnoreCase))
-                {
-                    return;
-                }
+                Console.WriteLine("\nPress Enter to continue:");
+                Console.ReadLine();
 
                 scripture.HideRandomWords();
             }
             while (!scripture.AreAllWordsHidden());
 
-            Console.WriteLine("All words are hidden. Exiting program.");
-
-            Console.WriteLine("Would you like to learn another scripture? (yes/no):");
-            string answer = Console.ReadLine();
-            if (!answer.Equals("yes", StringComparison.OrdinalIgnoreCase))
-            {
-                break;
-            }
+            Console.WriteLine("All words in the new scripture are hidden.");
         }
+
+        Console.WriteLine("Exiting program.");
     }
 }
