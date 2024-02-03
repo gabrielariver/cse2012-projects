@@ -1,0 +1,4 @@
+Breathing Activity started at 3/2/2024 16:10:19
+Breathing Activity completed at 3/2/2024 16:10:28 with a duration of 5 seconds
+Breathing Activity started at 3/2/2024 16:33:32
+Breathing Activity completed at 3/2/2024 16:33:47 with a duration of 10 seconds
