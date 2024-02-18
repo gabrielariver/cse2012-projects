@@ -1,0 +1,6 @@
+The provided code comprises a system for online orders with four classes:
+`Product`, `Customer`, `Address`, and `Order`. Each class encapsulates its specific functionality, 
+adhering to the encapsulation principle. The `Product` class encapsulates product details such as name, ID, 
+price, and quantity. `Customer` encapsulates customer data, including name and address, with `Address` 
+encapsulating address details. `Order` encapsulates logic for managing orders, calculating total cost, 
+and generating packing and shipping labels. 
