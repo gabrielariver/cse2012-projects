@@ -1,0 +1,7 @@
+The provided codes comprise a YouTube video tracking program with associated comments. 
+The functionality is organized into three main classes: `Video`, `Comment`, and `Program`. 
+The `Video` class represents a video with attributes such as title, author, and duration, 
+along with a list of comments. The `Comment` class represents a comment with a commenter's name and text. 
+The main program creates instances of videos and comments, adds comments to videos, and displays relevant information. 
+Abstraction is applied by encapsulating the implementation details of the `Video` and `Comment` classes, 
+allowing the main program to interact with them without needing to know their internal structure, thereby facilitating code maintenance and modification.
