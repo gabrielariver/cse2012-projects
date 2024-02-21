@@ -1,0 +1,6 @@
+Different types of events are defined: ConferenceEvent, ReceptionEvent, and OutdoorMeetingEvent, 
+each extending the base class Event. The Event class encapsulates common attributes for all events, 
+such as title, description, date, time, and address. Each derived class adds specific details for the type of event, 
+such as speaker's name for conferences, email for RSVP for receptions, and weather forecast for outdoor meetings.
+This demonstrates the use of inheritance in the system design, where derived classes inherit attributes and behaviors 
+from the base class, allowing for a more efficient and organized implementation of the system.
