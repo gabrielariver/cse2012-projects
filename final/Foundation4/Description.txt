@@ -1,0 +1,5 @@
+Each type of activity (Running, StationaryBicycle, and Swimming) is implemented as a separate class that inherits 
+from the abstract class Activity. Each derived class implements its own calculations for distance, speed, pace, 
+and activity-specific summary. This demonstrates the use of inheritance to avoid code duplication and promotes 
+reuse of common functionalities. Additionally, the implementation of the GetSummary() method showcases polymorphism, 
+as each activity instance invokes its own GetSummary() method, which is specific to its activity type.
